@@ -43,21 +43,18 @@ path = []
 graph = {}
 graph[player.currentRoom.id] = player.currentRoom.getExits()
 
-print(graph)
+
 
 while len(graph) < (len(roomGraph) - 1):
     # print(path)
     # record room graph if not entered 
-
-    if player.currentRoom.id not in graph: #if current room id not in graph, creat room id key and add exits as value
+    
+    if player.currentRoom.id not in graph: #if current roomid not in graph, create room id key and add exits as value
         
         graph[player.currentRoom.id] = player.currentRoom.getExits()
+        print(graph[player.currentRoom.id], 'before')
+
         
-        print(path)
-        
-        graph[player.currentRoom.id].remove(path[-1]) #removes last path direction because thats where we came from
-        
-        # print(graph[player.currentRoom.id], 'after')
         
 
     # if all rooms visited in wing, go back to next available room that has unchecked rooms connected
